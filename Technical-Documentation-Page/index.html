@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+	<nav id="navbar">
+		<header>Getting started with HTML</header>
+		<ul>
+			<li><a class="nav-link" href="#What_is_HTML?">What is HTML?</a></li>
+			<li><a class="nav-link" href="#Anatomy_of_an_HTML_element">Anatomy of an HTML element</a></li>
+			<li><a class="nav-link" href="#Nesting_elements">Nesting elements</a></li>
+			<li><a class="nav-link" href="#Void_elements">Void elements</a></li>
+			<li><a class="nav-link" href="#Attributes">Attributes</a></li>
+			<li><a class="nav-link" href="#Boolean_attributes">Boolean attributes</a></li>
+			<li><a class="nav-link" href="#Summary">Summary</a></li>
+		</ul>
+		
+	</nav>
+	<main id="main-doc">
+	<section class="main-section" id="What_is_HTML?">
+		<header>What is HTML?</header>
+		<p>
+			HTML (HyperText Markup Language) is a markup language that tells web browsers how to structure the web pages you visit. It can be as complicated or as simple as the web developer wants it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of content to make it appear or act in a certain way. The enclosing tags can make content into a hyperlink to connect to another page, italicize words, and so on. For example, consider the following line of text:
+		</p>
+		<code>My cat is very grumpy</code>
+		<p>If we wanted the text to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph (<em>&lt;p&gt;</em>) element:</p>
+		<code>&lt;p&gt;My cat is very grumpy&lt;/p&gt;</code>
+		<p>
+			<strong>Note:</strong> Tags in HTML are not case-sensitive. This means they can be written in uppercase or lowercase. For example, a <em>&lt;title&gt;</em> tag could be written as <em>&lt;title&gt;, &lt;TITLE&gt;, &lt;Title&gt;, &lt;TiTlE&gt;</em>, etc., and it will work. However, it is best practice to write all tags in lowercase for consistency and readability.
+		</p>
+	</section>
+
+
+	<section class="main-section" id="Anatomy_of_an_HTML_element">
+		<header>Anatomy of an HTML element</header>
+			<p>Let's further explore our paragraph element from the previous section, The anatomy of our element is:</p>
+			<ul>
+				<li>
+					<p><strong>The opening tag:</strong> This consists of the name of the element (in this example, <em>p</em> for paragraph), wrapped in opening and closing angle brackets. This opening tag marks where the element begins or starts to take effect. In this example, it precedes the start of the paragraph text.</p>
+				</li>
+				<li>
+					<p><strong>The content:</strong> This is the content of the element. In this example, it is the paragraph text.</p>
+				</li>
+				<li>
+					<p><strong>The closing tag:</strong> This is the same as the opening tag, except that it includes a forward slash before the element name. This marks where the element ends. Failing to include a closing tag is a common beginner error that can produce peculiar results.</p>
+				</li>
+			</ul>
+	</section>
+
+
+	<section class="main-section" id="Nesting_elements">
+		<header>Nesting elements</header>
+			<p>
+				Elements can be placed within other elements. This is called nesting. If we wanted to state that our cat is very grumpy, we could wrap the word very in a <em>&lt;strong&gt;</em> element, which means that the word is to have strong(er) text formatting:
+			</p>
+			<code>&lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.&lt;/p&gt;</code>
+			<p>
+				There is a right and wrong way to do nesting. In the example above, we opened the <em>p</em> element first, then opened the <em>strong</em> element. For proper nesting, we should close the <em>strong</em> element first, before closing the <em>p</em>.
+			</p>
+			<p>The following is an example of the wrong way to do nesting:</p>
+			<code>&lt;p&gt;My cat is &lt;strong&gt;very grumpy.&lt;/p&gt;&lt;/strong&gt;</code>
+
+			<p>
+				The <strong>tags have to open and close in a way that they are inside or outside one another</strong>. With the kind of overlap in the example above, the browser has to guess at your intent. This kind of guessing can result in unexpected results.
+			</p>
+
+	</section>
+
+
+	<section class="main-section" id="Void_elements">
+		<header>Void elements</header>
+		<p>
+			Not all elements follow the pattern of an opening tag, content, and a closing tag. Some elements consist of a single tag, which is typically used to insert/embed something in the document. Such elements are called void elements. For example, the <em>&lt;img&gt;</em> element embeds an image file onto a page:
+		</p>
+		<code>
+			<p>&lt;img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" alt="Firefox icon" /&gt;
+			</p> 
+		</code>
+		<p>
+			<strong>Note:</strong> In HTML, there is no requirement to add a "/" at the end of a void element's tag, for example: <em>&lt;img src="images/cat.jpg" alt="cat" /&gt;</em>. However, it is also a valid syntax, and you may do this when you want your HTML to be valid XML.
+		</p>
+
+		<header>Active learning: Adding attributes to an element</header>
+		<p>The &lt;img&gt; element can take a number of attributes, including:</p>
+		<ul>
+			<li>
+				<p><strong>src:</strong> The <em>src</em> attribute is a required attribute that specifies the location of the image. For example: <em>src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png"</em></p>
+			</li>
+			<li>
+				<p><strong>alt:</strong> The <em>alt</em> attribute specifies a text description of the image. For example: <em>alt="The Firefox icon"</em>. </p>
+			</li>
+			<li>
+				<p><strong>width:</strong> The <em>width</em> attribute specifies the width of the image with the unit being pixels. For example: <em>width="300"</em>. </p>
+			</li>
+			<li>
+				<p><strong>height:</strong> The <em>height</em> attribute specifies the height of the image with the unit being pixels. For example: <em>height="300"</em>. </p>
+			</li>
+		</ul>
+	</section>
+
+
+	<section class="main-section" id="Attributes">
+		<header>Attributes</header>
+		<p>Attributes contain extra information about the element that won't appear in the content. In this example, the <em>class</em> attribute is an identifying name used to target the element with style information.</p>
+		<p>An attribute should have:</p>
+		<ul>
+			<li><p>A space between it and the element name. (For an element with more than one attribute, the attributes should be separated by spaces too.)</p></li>
+			<li><p>The attribute name, followed by an equal sign.</p></li>
+			<li><p>An attribute value, wrapped with opening and closing quote marks.</p></li>
+		</ul>
+	</section>
+
+
+
+	<section class="main-section" id="Boolean_attributes">
+		<header>Boolean attributes</header>
+		<p>
+			Sometimes you will see attributes written without values. This is entirely acceptable. These are called Boolean attributes. Boolean attributes can only have one value, which is generally the same as the attribute name. For example, consider the <em>disabled</em> attribute, which you can assign to form input elements. (You use this to disable the form input elements so the user can't make entries. The disabled elements typically have a grayed-out appearance.) For example:
+		</p>
+		<code>&lt;input type="text" disabled="disabled" /&gt;</code>
+
+		<p>As shorthand, it is acceptable to write this as follows:</p>
+		<code> 
+			&lt;!-- using the disabled attribute prevents the end user from entering text into the input box --&gt;<br>
+			&lt;input type="text" disabled /&gt;
+			<br>
+			<br>
+			&lt;!-- text input is allowed, as it doesn't contain the disabled attribute --&gt;<br>
+			&lt;input type="text" /&gt;
+		</code>
+
+	</section>
+
+	<section class="main-section" id="Summary">
+		<header>Summary</header>
+		<p>At this point, you should understand what HTML looks like, and how it works at a basic level. You should also be able to write a few elements and attributes. The subsequent articles of this module go further on some of the topics introduced here, as well as presenting other concepts of the language.</p>
+	</section>
+	</main>
+</body>
+</html>
